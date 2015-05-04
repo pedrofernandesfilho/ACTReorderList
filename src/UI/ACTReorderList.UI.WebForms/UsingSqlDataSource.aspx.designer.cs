@@ -22,15 +22,6 @@ namespace ACTReorderList.UI.WebForms {
         protected global::System.Web.UI.ScriptManager ScriptManager;
         
         /// <summary>
-        /// UpdatePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel;
-        
-        /// <summary>
         /// SqlDataSource control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace ACTReorderList.UI.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource;
+        
+        /// <summary>
+        /// UpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
         
         /// <summary>
         /// ReorderList control.
