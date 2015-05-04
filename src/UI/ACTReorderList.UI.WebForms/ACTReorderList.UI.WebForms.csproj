@@ -13,12 +13,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ACTReorderList.UI.WebForms</RootNamespace>
     <AssemblyName>ACTReorderList.UI.WebForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="App_Data\ReorderList.mdf" />
+    <Content Include="App_Data\ReorderList_log.ldf">
+      <DependentUpon>ReorderList.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\css\css.css" />
+    <Content Include="FromList.aspx" />
+    <Content Include="Site1.Master" />
+    <Content Include="UsingSqlDataSource.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -58,18 +67,54 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FromList.aspx.cs">
+      <DependentUpon>FromList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FromList.aspx.designer.cs">
+      <DependentUpon>FromList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UsingSqlDataSource.aspx.cs">
+      <DependentUpon>UsingSqlDataSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsingSqlDataSource.aspx.designer.cs">
+      <DependentUpon>UsingSqlDataSource.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\Components\AjaxControlToolkit\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\ACTReorderList.Core.Domain\ACTReorderList.Core.Domain.csproj">
+      <Project>{a88c52d5-2e94-4952-b009-c25fa731d452}</Project>
+      <Name>ACTReorderList.Core.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

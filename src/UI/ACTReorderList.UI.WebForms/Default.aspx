@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ACTReorderList.UI.WebForms.Default" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>AJAX Control Toolkit ReorderList</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <h1>ReorderList</h1>
-    </div>
-    </form>
-</body></html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ACTReorderList.UI.WebForms.Default" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <ul>
+        <li><a href="<%=ResolveClientUrl("~/SqlDataSource.aspx")%>">SqlDataSource</a></li>
+    </ul>
+</asp:Content>

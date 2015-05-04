@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ACTReorderList.UI.WebForms.Site1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AJAX Control Toolkit ReorderList</title>
+    <link href="<%=ResolveClientUrl("~/Content/css/css.css")%>" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h1>ReorderList</h1>
+        <a href="<%=ResolveClientUrl("~/")%>">Home</a>
+        <hr />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body></html>

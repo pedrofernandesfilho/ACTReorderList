@@ -1,0 +1,5 @@
+﻿.reorderList li {list-style:none;margin:2px}
+.callback {background-color:#ff00dc; border:1px solid #f00}
+.itemTemplate {background-color:#bef9fc; border:1px solid #0f0}
+.dragHandleTemplate {width:15px;height:15px;cursor:move;background-color:#ff0;border:1px solid #f00}
+.reorderTemplate {background-color:#ce71ff}

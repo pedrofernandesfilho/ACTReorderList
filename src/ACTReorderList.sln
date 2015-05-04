@@ -7,6 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9E20F691-9173-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACTReorderList.UI.WebForms", "UI\ACTReorderList.UI.WebForms\ACTReorderList.UI.WebForms.csproj", "{A4664CF1-CF0C-4072-9ED8-C594CAE7B8BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{83E7D45F-525E-43D4-AB1D-9CE2B93CB602}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AjaxControlToolkit", "AjaxControlToolkit", "{9791BF25-33C8-4703-BBAD-67542C22DAD9}"
+	ProjectSection(SolutionItems) = preProject
+		Components\AjaxControlToolkit\AjaxControlToolkit.dll = Components\AjaxControlToolkit\AjaxControlToolkit.dll
+		Components\AjaxControlToolkit\AjaxControlToolkit.pdb = Components\AjaxControlToolkit\AjaxControlToolkit.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pt", "pt", "{3C391ED4-5635-4A4B-884F-3CF66E66F982}"
+	ProjectSection(SolutionItems) = preProject
+		Components\AjaxControlToolkit\pt\AjaxControlToolkit.resources.dll = Components\AjaxControlToolkit\pt\AjaxControlToolkit.resources.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{ED493D82-F222-4C04-9FE5-2F2F3CAC7C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACTReorderList.Core.Domain", "Core\ACTReorderList.Core.Domain\ACTReorderList.Core.Domain.csproj", "{A88C52D5-2E94-4952-B009-C25FA731D452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +34,18 @@ Global
 		{A4664CF1-CF0C-4072-9ED8-C594CAE7B8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4664CF1-CF0C-4072-9ED8-C594CAE7B8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4664CF1-CF0C-4072-9ED8-C594CAE7B8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88C52D5-2E94-4952-B009-C25FA731D452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88C52D5-2E94-4952-B009-C25FA731D452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88C52D5-2E94-4952-B009-C25FA731D452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88C52D5-2E94-4952-B009-C25FA731D452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4664CF1-CF0C-4072-9ED8-C594CAE7B8BB} = {9E20F691-9173-4341-90A3-C684237AD7BE}
+		{9791BF25-33C8-4703-BBAD-67542C22DAD9} = {83E7D45F-525E-43D4-AB1D-9CE2B93CB602}
+		{3C391ED4-5635-4A4B-884F-3CF66E66F982} = {9791BF25-33C8-4703-BBAD-67542C22DAD9}
+		{A88C52D5-2E94-4952-B009-C25FA731D452} = {ED493D82-F222-4C04-9FE5-2F2F3CAC7C23}
 	EndGlobalSection
 EndGlobal
