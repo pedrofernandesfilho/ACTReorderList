@@ -10,7 +10,7 @@
 namespace ACTReorderList.UI.WebForms {
     
     
-    public partial class FromList {
+    public partial class UsingObjectDataSource {
         
         /// <summary>
         /// ScriptManager control.
@@ -20,6 +20,24 @@ namespace ACTReorderList.UI.WebForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager;
+        
+        /// <summary>
+        /// ObjectDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource;
+        
+        /// <summary>
+        /// UpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
         
         /// <summary>
         /// ReorderList control.

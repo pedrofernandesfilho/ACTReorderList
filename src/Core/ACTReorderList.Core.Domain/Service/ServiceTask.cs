@@ -1,10 +1,20 @@
 ﻿using ACTReorderList.Core.Domain.Model;
+using ACTReorderList.Core.Domain.Repository;
 using System.Collections.Generic;
 
 namespace ACTReorderList.Core.Domain.Service
 {
     public class ServiceTask
     {
+        private readonly ITaskRepository _taskRepository;
+
+        public ServiceTask(ITaskRepository taskRepository)
+        {
+            _taskRepository = taskRepository;
+        }
+
+        public ServiceTask() {}
+
         public IList<Task> Get()
         {
             IList<Task> ret = new List<Task>();

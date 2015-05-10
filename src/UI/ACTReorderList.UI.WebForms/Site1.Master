@@ -9,6 +9,8 @@
     <form id="form1" runat="server">
         <h1>ReorderList</h1>
         <a href="<%=ResolveClientUrl("~/")%>">Home</a>
+        | <a href="<%=ResolveClientUrl("~/UsingSqlDataSource.aspx")%>">Using SqlDataSource</a>
+        | <a href="<%=ResolveClientUrl("~/UsingObjectDataSource.aspx")%>">Using ObjectDataSource</a>
         <hr />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>

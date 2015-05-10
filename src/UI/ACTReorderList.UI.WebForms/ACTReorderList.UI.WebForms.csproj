@@ -44,7 +44,7 @@
       <DependentUpon>ReorderList.mdf</DependentUpon>
     </Content>
     <Content Include="Content\css\css.css" />
-    <Content Include="FromList.aspx" />
+    <Content Include="UsingObjectDataSource.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="UsingSqlDataSource.aspx" />
     <None Include="Web.Debug.config">
@@ -67,12 +67,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FromList.aspx.cs">
-      <DependentUpon>FromList.aspx</DependentUpon>
+    <Compile Include="UsingObjectDataSource.aspx.cs">
+      <DependentUpon>UsingObjectDataSource.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FromList.aspx.designer.cs">
-      <DependentUpon>FromList.aspx</DependentUpon>
+    <Compile Include="UsingObjectDataSource.aspx.designer.cs">
+      <DependentUpon>UsingObjectDataSource.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -93,7 +93,9 @@
       <DependentUpon>UsingSqlDataSource.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\Components\AjaxControlToolkit\AjaxControlToolkit.dll</HintPath>
