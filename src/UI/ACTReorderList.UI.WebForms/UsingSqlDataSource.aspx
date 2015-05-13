@@ -14,7 +14,8 @@
             <asp:FormParameter Name="Description" Type="String" FormField="txtDescription" />
         </InsertParameters>
     </asp:SqlDataSource>
-    <h3>To do list:</h3>
+    <h3>Using SqlDataSource</h3>
+    <b>Tasks:</b>
     <asp:UpdatePanel runat="server" ID="UpdatePanel">
         <ContentTemplate>
             <act:ReorderList runat="server" ID="ReorderList" CssClass="reorderList" ClientIDMode="AutoID"
@@ -32,7 +33,7 @@
                 </EmptyListTemplate>
                 <ItemTemplate>
                     <div class="itemTemplate">
-                        <span>Priority: #<%#Eval("Priority") %> - <%#Eval("Description") %></span>
+                        <span>Priority: #<%#string.Format("{0} - {1} ({2})", Eval("Priority"), Eval("Description"), Eval("Id"))%></span>
                     </div>
                 </ItemTemplate>
                 <DragHandleTemplate>
