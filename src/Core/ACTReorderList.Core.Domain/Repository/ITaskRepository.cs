@@ -1,14 +1,13 @@
 ﻿using ACTReorderList.Core.Domain.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ACTReorderList.Core.Domain.Repository
 {
     public interface ITaskRepository
     {
-        IList<Task> Get();
+        Task Get(int id);
+        
+        IEnumerable<Task> Get();
 
         void Add(Task t);
 

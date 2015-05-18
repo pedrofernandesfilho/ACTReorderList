@@ -13,19 +13,21 @@ namespace ACTReorderList.Core.Domain.Service
             _taskRepository = taskRepository;
         }
 
-        public ServiceTask() {}
-
-        public IList<Task> Get()
+        public IEnumerable<Task> Get()
         {
-            IList<Task> ret = new List<Task>();
+            return _taskRepository.Get();
+        }
 
-            ret.Add(new Task { Id = 10, Priority = 5, Description = "Release" });
-            ret.Add(new Task { Id = 11, Priority = 4, Description = "Test" });            
-            ret.Add(new Task { Id = 12, Priority = 3, Description = "Implement code" });
-            ret.Add(new Task { Id = 13, Priority = 2, Description = "Create Project" });
-            ret.Add(new Task { Id = 14, Priority = 1, Description = "Create repositorty" });
+        public void UpdatePriority(int id, int priority)
+        {
+            Task t = _taskRepository.Get(id);
+            t.Priority = priority;
+            _taskRepository.Update(t);
+        }
 
-            return ret;
+        public void Add(string description, int priority)
+        {
+            _taskRepository.Add(new Task { Description = description, Priority = priority });
         }
     }
 }

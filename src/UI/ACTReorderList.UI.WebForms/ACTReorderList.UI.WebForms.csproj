@@ -47,6 +47,7 @@
     <Content Include="UsingObjectDataSource.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="UsingSqlDataSource.aspx" />
+    <Content Include="ConnectionString.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -116,6 +117,10 @@
     <ProjectReference Include="..\..\Core\ACTReorderList.Core.Domain\ACTReorderList.Core.Domain.csproj">
       <Project>{a88c52d5-2e94-4952-b009-c25fa731d452}</Project>
       <Name>ACTReorderList.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infra\Data\ACTReorderList.Infra.Data.ADONet\ACTReorderList.Infra.Data.ADONet.csproj">
+      <Project>{7ef858db-0a7f-40b2-bde9-f08125ea7c3a}</Project>
+      <Name>ACTReorderList.Infra.Data.ADONet</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
