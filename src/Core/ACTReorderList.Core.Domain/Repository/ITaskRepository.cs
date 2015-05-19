@@ -1,16 +1,16 @@
 ﻿using ACTReorderList.Core.Domain.Model;
-using System.Collections.Generic;
+using System;
 
 namespace ACTReorderList.Core.Domain.Repository
 {
     public interface ITaskRepository
     {
         Task Get(int id);
-        
-        IEnumerable<Task> Get();
+
+        Task[] GetAll<OrderBy>(Func<Task, OrderBy> orderBy);
 
         void Add(Task t);
 
-        void Update(Task t);
+        int Update(Task t);
     }
 }

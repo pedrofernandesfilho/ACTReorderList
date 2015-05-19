@@ -4,7 +4,7 @@
     <asp:ScriptManager runat="server" ID="ScriptManager"></asp:ScriptManager>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource" OnObjectCreating="ObjectDataSource_ObjectCreating" 
         TypeName="ACTReorderList.Core.Domain.Service.ServiceTask" 
-        SelectMethod="Get"
+        SelectMethod="GetAllOrderByPriority"
         UpdateMethod="UpdatePriority"
         InsertMethod="Add">
         <UpdateParameters>
@@ -14,8 +14,8 @@
     </asp:ObjectDataSource>
     <h3>Using ObjectDataSource</h3>
     <b>Tasks:</b>
-    <asp:UpdatePanel runat="server" ID="UpdatePanel">
-        <ContentTemplate>
+<%--    <asp:UpdatePanel runat="server" ID="UpdatePanel">
+        <ContentTemplate>--%>
             <act:ReorderList runat="server" ID="ReorderList" CssClass="reorderList" ClientIDMode="AutoID"
                 DataKeyField="Id"
                 SortOrderField="Priority"
@@ -45,6 +45,6 @@
                     <asp:Button runat="server" Text="add" CommandName="Insert" />
                 </InsertItemTemplate>
             </act:ReorderList>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+<%--        </ContentTemplate>
+    </asp:UpdatePanel>--%>
 </asp:Content>

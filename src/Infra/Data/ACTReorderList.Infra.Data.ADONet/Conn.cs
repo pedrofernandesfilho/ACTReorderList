@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace ACTReorderList.Infra.Data.ADONet
 {
@@ -37,7 +35,7 @@ namespace ACTReorderList.Infra.Data.ADONet
             if (_c.State != ConnectionState.Closed) _c.Close();
         }
 
-        public DataSet ExecuteProcedureDataSet(string name, IList<SqlParameter> parameters = null)
+        public DataSet ExecuteProcedureDataSet(string name, SqlParameter[] parameters = null)
         {
             DataSet ret = new DataSet();
             SqlCommand cmd = null;
@@ -50,7 +48,7 @@ namespace ACTReorderList.Infra.Data.ADONet
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = name;
 
-                if (parameters != null) cmd.Parameters.AddRange(parameters.ToArray());
+                if (parameters != null) cmd.Parameters.AddRange(parameters);
 
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd)) da.Fill(ret);
             }
@@ -68,7 +66,7 @@ namespace ACTReorderList.Infra.Data.ADONet
             return ret;
         }
 
-        public int ExecuteProcedureNonQuery(string name, IList<SqlParameter> parameters = null)
+        public int ExecuteProcedureNonQuery(string name, SqlParameter[] parameters = null)
         {
             int ret;
             SqlCommand cmd = null;
@@ -81,7 +79,7 @@ namespace ACTReorderList.Infra.Data.ADONet
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = name;
 
-                if (parameters != null) cmd.Parameters.AddRange(parameters.ToArray());
+                if (parameters != null) cmd.Parameters.AddRange(parameters);
 
                 ret = cmd.ExecuteNonQuery();
             }
@@ -99,7 +97,7 @@ namespace ACTReorderList.Infra.Data.ADONet
             return ret;
         }
 
-        public DataSet ExecuteQueryDataSet(string query, IList<SqlParameter> parameters = null)
+        public DataSet ExecuteQueryDataSet(string query, SqlParameter[] parameters = null)
         {
             DataSet ret = new DataSet();
             SqlCommand cmd = null;
@@ -112,7 +110,7 @@ namespace ACTReorderList.Infra.Data.ADONet
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = query;
 
-                if (parameters != null) cmd.Parameters.AddRange(parameters.ToArray());
+                if (parameters != null) cmd.Parameters.AddRange(parameters);
 
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd)) da.Fill(ret);
             }
@@ -130,7 +128,7 @@ namespace ACTReorderList.Infra.Data.ADONet
             return ret;
         }
 
-        public int ExecuteQueryNonQuery(string query, IList<SqlParameter> parameters = null)
+        public int ExecuteQueryNonQuery(string query, SqlParameter[] parameters = null)
         {
             int ret;
             SqlCommand cmd = null;
@@ -143,11 +141,19 @@ namespace ACTReorderList.Infra.Data.ADONet
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = query;
 
+                if (parameters != null) cmd.Parameters.AddRange(parameters);
+
                 ret = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 throw e;
+            }
+            finally
+            {
+                cmd.Dispose();
+                cmd = null;
+                CloseConnection();
             }
 
             return ret;
