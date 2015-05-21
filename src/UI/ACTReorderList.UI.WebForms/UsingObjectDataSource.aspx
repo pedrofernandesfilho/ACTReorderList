@@ -7,10 +7,6 @@
         SelectMethod="GetAllOrderByPriority"
         UpdateMethod="UpdatePriority"
         InsertMethod="Add">
-        <UpdateParameters>
-            <asp:Parameter Name="id" Type="Int32" />
-            <asp:Parameter Name="priority" Type="Int32" />
-        </UpdateParameters>
     </asp:ObjectDataSource>
     <h3>Using ObjectDataSource</h3>
     <b>Tasks:</b>

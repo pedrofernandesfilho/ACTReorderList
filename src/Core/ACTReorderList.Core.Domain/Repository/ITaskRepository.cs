@@ -1,5 +1,6 @@
 ﻿using ACTReorderList.Core.Domain.Model;
 using System;
+using System.Collections.Generic;
 
 namespace ACTReorderList.Core.Domain.Repository
 {
@@ -7,7 +8,7 @@ namespace ACTReorderList.Core.Domain.Repository
     {
         Task Get(int id);
 
-        Task[] GetAll<OrderBy>(Func<Task, OrderBy> orderBy);
+        IEnumerable<Task> GetAll<OrderBy>(Func<Task, OrderBy> orderBy);
 
         void Add(Task t);
 

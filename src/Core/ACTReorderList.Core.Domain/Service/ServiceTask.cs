@@ -1,5 +1,6 @@
 ﻿using ACTReorderList.Core.Domain.Model;
 using ACTReorderList.Core.Domain.Repository;
+using System.Collections.Generic;
 
 namespace ACTReorderList.Core.Domain.Service
 {
@@ -12,7 +13,7 @@ namespace ACTReorderList.Core.Domain.Service
             _taskRepository = taskRepository;
         }
 
-        public Task[] GetAllOrderByPriority()
+        public IEnumerable<Task> GetAllOrderByPriority()
         {
             return _taskRepository.GetAll(t => t.Priority);
         }
