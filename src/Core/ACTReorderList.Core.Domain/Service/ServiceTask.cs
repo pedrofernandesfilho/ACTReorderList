@@ -18,7 +18,7 @@ namespace ACTReorderList.Core.Domain.Service
             return _taskRepository.GetAll(t => t.Priority);
         }
 
-        public int UpdatePriority(int id, int priority)
+        public int UpdatePriority(int id, int priority, string description)
         {
             Task t = _taskRepository.Get(id);
             t.Priority = priority;
