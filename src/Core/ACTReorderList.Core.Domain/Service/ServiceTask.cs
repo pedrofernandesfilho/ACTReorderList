@@ -25,9 +25,9 @@ namespace ACTReorderList.Core.Domain.Service
             return _taskRepository.Update(t);
         }
 
-        public void Add(string description, int priority)
+        public void Add(string description, int Priority)
         {
-            _taskRepository.Add(new Task { Description = description, Priority = priority });
+            _taskRepository.Add(new Task { Description = description, Priority = Priority });
         }
     }
 }

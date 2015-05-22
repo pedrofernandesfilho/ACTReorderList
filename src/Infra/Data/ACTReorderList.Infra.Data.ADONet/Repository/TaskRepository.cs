@@ -19,13 +19,17 @@ namespace ACTReorderList.Infra.Data.ADONet.Repository
 
         public Task Get(int id)
         {
-            throw new NotImplementedException();
+            string query = "SELECT Id, Priority, Description FROM Task WHERE Id = @P1";
+
+            DataRow dr = _c.ExecuteQueryDataSet(query, new SqlParameter { ParameterName = "@P1", Value = id }).Tables[0].Rows[0];
+
+            return new Task { Id = (int)dr["Id"], Priority = (int)dr["Priority"], Description = dr["Description"].ToString() };
         }
 
         public IEnumerable<Task> GetAll<OrderBy>(Func<Task, OrderBy> orderBy)
         {
             IList<Task> ret = new List<Task>();
-            
+
             string query = "SELECT Id, Priority, Description FROM Task";
 
             foreach (DataRow item in _c.ExecuteQueryDataSet(query).Tables[0].Rows)
@@ -43,13 +47,11 @@ namespace ACTReorderList.Infra.Data.ADONet.Repository
         {
             string query = "UPDATE Task SET Priority = @P1, Description = @P2 WHERE Id = @P3";
 
-            SqlParameter[] parameters = new SqlParameter[] {
+            return _c.ExecuteQueryNonQuery(query,
                 new SqlParameter { ParameterName = "@P1", Value = t.Priority },
                 new SqlParameter { ParameterName = "@P2", Value = t.Description },
                 new SqlParameter { ParameterName = "@P3", Value = t.Id }
-            };
-
-            return _c.ExecuteQueryNonQuery(query, parameters);
+            );
         }
     }
 }

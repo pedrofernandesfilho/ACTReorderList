@@ -12,6 +12,7 @@ namespace ACTReorderList.UI.WebForms
 
         protected void ObjectDataSource_ObjectCreating(object sender, ObjectDataSourceEventArgs e)
         {
+            // TODO: Use Dependency Resolution
             e.ObjectInstance = new ServiceTask(new TaskRepository(new Conn()));
         }
     }

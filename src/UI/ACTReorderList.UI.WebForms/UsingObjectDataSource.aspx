@@ -7,11 +7,15 @@
         SelectMethod="GetAllOrderByPriority"
         UpdateMethod="UpdatePriority"
         InsertMethod="Add">
+        <InsertParameters>
+            <asp:FormParameter Name="description" Type="String" FormField="txtDescription" />
+            <asp:Parameter Name="Priority" Type="Int32" />
+        </InsertParameters>
     </asp:ObjectDataSource>
     <h3>Using ObjectDataSource</h3>
     <b>Tasks:</b>
-<%--    <asp:UpdatePanel runat="server" ID="UpdatePanel">
-        <ContentTemplate>--%>
+    <asp:UpdatePanel runat="server" ID="UpdatePanel">
+        <ContentTemplate>
             <act:ReorderList runat="server" ID="ReorderList" CssClass="reorderList" ClientIDMode="AutoID"
                 DataKeyField="Id"
                 SortOrderField="Priority"
@@ -41,6 +45,6 @@
                     <asp:Button runat="server" Text="add" CommandName="Insert" />
                 </InsertItemTemplate>
             </act:ReorderList>
-<%--        </ContentTemplate>
-    </asp:UpdatePanel>--%>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
