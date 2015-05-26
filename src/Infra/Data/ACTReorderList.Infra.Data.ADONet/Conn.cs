@@ -11,7 +11,7 @@ namespace ACTReorderList.Infra.Data.ADONet
 
         public Conn()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["ReorderList"].ConnectionString;
 
             _c = new SqlConnection(connectionString);
         }
