@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace ACTReorderList.Core.Domain.Service
 {
-    public class ServiceTask
+    public class TaskService
     {
         private readonly ITaskRepository _taskRepository;
 
-        public ServiceTask(ITaskRepository taskRepository)
+        public TaskService(ITaskRepository taskRepository)
         {
             _taskRepository = taskRepository;
         }
@@ -25,9 +25,9 @@ namespace ACTReorderList.Core.Domain.Service
             return _taskRepository.Update(t);
         }
 
-        public void Add(string description, int Priority)
+        public void Add(int Priority, string description)
         {
-            _taskRepository.Add(new Task { Description = description, Priority = Priority });
+            _taskRepository.Add(new Task { Priority = Priority, Description = description });
         }
     }
 }

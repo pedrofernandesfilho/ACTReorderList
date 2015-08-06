@@ -1,15 +1,14 @@
-﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UsingObjectDataSource.aspx.cs" Inherits="ACTReorderList.UI.WebForms.UsingObjectDataSource" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UsingObjectDataSource.aspx.cs" Inherits="ACTReorderList.UI.WebForms.UsingObjectDataSource" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" ID="ScriptManager"></asp:ScriptManager>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource" OnObjectCreating="ObjectDataSource_ObjectCreating" 
-        TypeName="ACTReorderList.Core.Domain.Service.ServiceTask" 
-        SelectMethod="GetAllOrderByPriority"
-        UpdateMethod="UpdatePriority"
-        InsertMethod="Add">
+        TypeName="ACTReorderList.UI.WebForms.UsingObjectDataSource" 
+        SelectMethod="ObjectDataSource_SelectMethod"
+        UpdateMethod="ObjectDataSource_UpdateMethod"
+        InsertMethod="ObjectDataSource_InsertMethod">
         <InsertParameters>
+            <asp:Parameter Name="priority" Type="Int32" />
             <asp:FormParameter Name="description" Type="String" FormField="txtDescription" />
-            <asp:Parameter Name="Priority" Type="Int32" />
         </InsertParameters>
     </asp:ObjectDataSource>
     <h3>Using ObjectDataSource</h3>
@@ -18,7 +17,7 @@
         <ContentTemplate>
             <act:ReorderList runat="server" ID="ReorderList" CssClass="reorderList" ClientIDMode="AutoID"
                 DataKeyField="Id"
-                SortOrderField="Priority"
+                SortOrderField="priority"
                 ItemInsertLocation="End"
                 AllowReorder="true"
                 DragHandleAlignment="Left"

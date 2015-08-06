@@ -40,7 +40,12 @@ namespace ACTReorderList.Infra.Data.ADONet.Repository
 
         public void Add(Task t)
         {
-            throw new NotImplementedException();
+            string query = "INSERT INTO [Task] (Priority, Description) VALUES (@Priority, @Description)";
+
+            _c.ExecuteQueryNonQuery(query,
+                new SqlParameter("@Priority", t.Priority),
+                new SqlParameter("@Description", t.Description)
+            );
         }
 
         public int Update(Task t)

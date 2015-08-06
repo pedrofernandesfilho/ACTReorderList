@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Repository\ITaskRepository.cs" />
-    <Compile Include="Service\ServiceTask.cs" />
+    <Compile Include="Service\TaskService.cs" />
     <Compile Include="Model\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
