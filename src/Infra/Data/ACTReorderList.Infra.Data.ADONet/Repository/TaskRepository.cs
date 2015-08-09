@@ -38,11 +38,11 @@ namespace ACTReorderList.Infra.Data.ADONet.Repository
             return ret.OrderBy(orderBy);
         }
 
-        public void Add(Task t)
+        public int Add(Task t)
         {
             string query = "INSERT INTO [Task] (Priority, Description) VALUES (@Priority, @Description)";
 
-            _c.ExecuteQueryNonQuery(query,
+            return _c.ExecuteQueryNonQuery(query,
                 new SqlParameter("@Priority", t.Priority),
                 new SqlParameter("@Description", t.Description)
             );

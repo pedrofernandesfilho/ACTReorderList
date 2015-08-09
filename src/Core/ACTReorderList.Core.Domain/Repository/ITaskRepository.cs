@@ -10,7 +10,7 @@ namespace ACTReorderList.Core.Domain.Repository
 
         IEnumerable<Task> GetAll<OrderBy>(Func<Task, OrderBy> orderBy);
 
-        void Add(Task t);
+        int Add(Task t);
 
         int Update(Task t);
     }

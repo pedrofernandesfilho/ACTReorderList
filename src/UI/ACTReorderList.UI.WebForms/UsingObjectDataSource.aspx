@@ -1,8 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UsingObjectDataSource.aspx.cs" Inherits="ACTReorderList.UI.WebForms.UsingObjectDataSource" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" ID="ScriptManager"></asp:ScriptManager>
-    <asp:ObjectDataSource runat="server" ID="ObjectDataSource" OnObjectCreating="ObjectDataSource_ObjectCreating" 
-        TypeName="ACTReorderList.UI.WebForms.UsingObjectDataSource" 
+    <asp:ObjectDataSource runat="server" ID="ObjectDataSource"  OnObjectCreating="ObjectDataSource_ObjectCreating" 
+        TypeName="ACTReorderList.Core.Domain.Service.TaskService"
+        SelectMethod="GetAllOrderByPriority"
+        UpdateMethod="UpdatePriority"
+        InsertMethod="Add">
+        <InsertParameters>
+            <asp:Parameter Name="priority" Type="Int32" />
+            <asp:FormParameter Name="description" Type="String" FormField="txtDescription" />
+        </InsertParameters>
+    </asp:ObjectDataSource>
+
+<%--    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1"  
+        TypeName="ACTReorderList.UI.WebForms.UsingObjectDataSource"
         SelectMethod="ObjectDataSource_SelectMethod"
         UpdateMethod="ObjectDataSource_UpdateMethod"
         InsertMethod="ObjectDataSource_InsertMethod">
@@ -10,7 +21,8 @@
             <asp:Parameter Name="priority" Type="Int32" />
             <asp:FormParameter Name="description" Type="String" FormField="txtDescription" />
         </InsertParameters>
-    </asp:ObjectDataSource>
+    </asp:ObjectDataSource>--%>
+
     <h3>Using ObjectDataSource</h3>
     <b>Tasks:</b>
     <asp:UpdatePanel runat="server" ID="UpdatePanel">

@@ -20,14 +20,19 @@ namespace ACTReorderList.Core.Domain.Service
 
         public int UpdatePriority(int id, int priority, string description)
         {
+            return UpdatePriority(id, priority);
+        }
+
+        public int UpdatePriority(int id, int priority)
+        {
             Task t = _taskRepository.Get(id);
             t.Priority = priority;
             return _taskRepository.Update(t);
         }
 
-        public void Add(int Priority, string description)
+        public int Add(int priority, string description)
         {
-            _taskRepository.Add(new Task { Priority = Priority, Description = description });
+            return _taskRepository.Add(new Task { Priority = priority, Description = description });
         }
     }
 }
