@@ -5,12 +5,7 @@
         SelectCommand="SELECT [Id], [Priority], [Description] FROM [Task] ORDER BY Priority ASC" 
         UpdateCommand="UPDATE [Task] SET [Priority] = @Priority WHERE [Id] = @Id"
         InsertCommand="INSERT INTO [Task] (Priority, Description) VALUES (@Priority, @Description)">
-        <UpdateParameters>
-            <asp:Parameter Name="Id" Type="Int32" />
-            <asp:Parameter Name="Priority" Type="Int32" />
-        </UpdateParameters>
         <InsertParameters>
-            <asp:Parameter Name="Priority" Type="Int32" />
             <asp:FormParameter Name="Description" Type="String" FormField="txtDescription" />
         </InsertParameters>
     </asp:SqlDataSource>

@@ -7,6 +7,7 @@
 </head><body>
     <form id="form1" runat="server">
         <h1>ReorderList</h1>
+        <p>Last access: <%=DateTime.Now %></p>
         <nav>
             <ul>
                 <li><a href="<%=ResolveClientUrl("~/")%>">Home</a></li>

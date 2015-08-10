@@ -4,10 +4,9 @@
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource"  OnObjectCreating="ObjectDataSource_ObjectCreating" 
         TypeName="ACTReorderList.Core.Domain.Service.TaskService"
         SelectMethod="GetAllOrderByPriority"
-        UpdateMethod="UpdatePriority"
+        UpdateMethod="Update"
         InsertMethod="Add">
         <InsertParameters>
-            <asp:Parameter Name="priority" Type="Int32" />
             <asp:FormParameter Name="description" Type="String" FormField="txtDescription" />
         </InsertParameters>
     </asp:ObjectDataSource>
@@ -29,7 +28,7 @@
         <ContentTemplate>
             <act:ReorderList runat="server" ID="ReorderList" CssClass="reorderList" ClientIDMode="AutoID"
                 DataKeyField="Id"
-                SortOrderField="priority"
+                SortOrderField="Priority"
                 ItemInsertLocation="End"
                 AllowReorder="true"
                 DragHandleAlignment="Left"
@@ -53,7 +52,7 @@
                 </ReorderTemplate>
                 <InsertItemTemplate>
                     <input type="text" name="txtDescription" />
-                    <asp:Button runat="server" Text="add" CommandName="Insert" />
+                    <asp:Button runat="server" Text="add" CommandName="Insert" ID="Button1" />
                 </InsertItemTemplate>
             </act:ReorderList>
         </ContentTemplate>
