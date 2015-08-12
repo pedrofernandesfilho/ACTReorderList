@@ -15,8 +15,11 @@ namespace ACTReorderList.UI.WebForms
         }
 
         // TODO: Use Dependency Injector
-        
-        public List<Task> ObjectDataSource_SelectMethod()
+
+        /*
+            If select method return IEnumerable, ReorderList can't generate New Item Sort Value.
+        */
+        public IList<Task> ObjectDataSource_SelectMethod()
         {
             return (new TaskService(new TaskRepository(new Conn()))).GetAllOrderByPriority().ToList();
         }
